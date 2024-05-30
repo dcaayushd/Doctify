@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class DoctorsInfo extends StatefulWidget {
   @override
@@ -13,11 +12,10 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.blue, // Navigation bar
-          statusBarColor: Colors.red, // Status bar
+        // brightness: Brightness.light,
+        iconTheme: IconThemeData(
+          color: Colors.black87
         ),
-        iconTheme: IconThemeData(color: Colors.black87),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -39,11 +37,11 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          "Dr. Raha Karki",
+                          "Dr. Stefeni Albert",
                           style: TextStyle(fontSize: 32),
                         ),
                         Text(
-                          "Heart Specialist",
+                          "Heart Speailist",
                           style: TextStyle(fontSize: 19, color: Colors.grey),
                         ),
                         SizedBox(
@@ -81,7 +79,7 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                 height: 16,
               ),
               Text(
-                "Dr. Aayusha Karki is a cardiologist in Nashville & affiliated with multiple hospitals in the  area. She received his medical degree from Duke University School of Medicine and has been in practice for more than 20 years. ",
+                "Dr. Stefeni Albert is a cardiologist in Nashville & affiliated with multiple hospitals in the  area.He received his medical degree from Duke University School of Medicine and has been in practice for more than 20 years. ",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
               SizedBox(
@@ -110,10 +108,9 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                                 height: 3,
                               ),
                               Container(
-                                  width:
-                                      MediaQuery.of(context).size.width - 268,
+                                  width: MediaQuery.of(context).size.width - 268,
                                   child: Text(
-                                    "House # 2, Road # 5, Near DownTown, Lalitpur, Nepal",
+                                    "House # 2, Road # 5, Green Road Dhanmondi, Dhaka, Bangladesh",
                                     style: TextStyle(color: Colors.grey),
                                   ))
                             ],
@@ -133,7 +130,7 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Daily Practice",
+                                "Daily Practict",
                                 style: TextStyle(
                                     color: Colors.black87.withOpacity(0.7),
                                     fontSize: 20),
@@ -142,8 +139,7 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                                 height: 3,
                               ),
                               Container(
-                                  width:
-                                      MediaQuery.of(context).size.width - 268,
+                                  width: MediaQuery.of(context).size.width - 268,
                                   child: Text(
                                     '''Monday - Friday
 Open till 7 Pm''',
@@ -155,13 +151,9 @@ Open till 7 Pm''',
                       )
                     ],
                   ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width -
-                        222, // Adjust the subtracted value as needed
-                    child: Image.asset(
-                      "assets/map.png",
-                      fit: BoxFit.fitWidth,
-                    ),
+                  Image.asset(
+                    "assets/map.png",
+                    width: 180,
                   )
                 ],
               ),
@@ -179,8 +171,7 @@ Open till 7 Pm''',
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16),
                       decoration: BoxDecoration(
                           color: Color(0xffFBB97C),
                           borderRadius: BorderRadius.circular(20)),
@@ -188,33 +179,31 @@ Open till 7 Pm''',
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                              padding: EdgeInsets.all(8),
-                              decoration: BoxDecoration(
-                                  color: Color(0xffFCCA9B),
-                                  borderRadius: BorderRadius.circular(16)),
+                            padding: EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Color(0xffFCCA9B),
+                              borderRadius: BorderRadius.circular(16)
+                            ),
                               child: Image.asset("assets/list.png")),
                           SizedBox(
                             width: 16,
                           ),
                           Container(
-                            width: MediaQuery.of(context).size.width / 2 - 130,
+                            width: MediaQuery.of(context).size.width/2 - 130,
                             child: Text(
                               "List Of Schedule",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 17),
+                              style: TextStyle(color: Colors.white,
+                              fontSize: 17),
                             ),
                           )
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 16,
-                  ),
+                  SizedBox(width: 16,),
                   Expanded(
                     child: Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+                      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16),
                       decoration: BoxDecoration(
                           color: Color(0xffA5A5A5),
                           borderRadius: BorderRadius.circular(20)),
@@ -225,17 +214,18 @@ Open till 7 Pm''',
                               padding: EdgeInsets.all(8),
                               decoration: BoxDecoration(
                                   color: Color(0xffBBBBBB),
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(16)
+                              ),
                               child: Image.asset("assets/list.png")),
                           SizedBox(
                             width: 16,
                           ),
                           Container(
-                            width: MediaQuery.of(context).size.width / 2 - 130,
+                            width: MediaQuery.of(context).size.width/2 - 130,
                             child: Text(
                               "Doctor's Daily Post",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 17),
+                              style: TextStyle(color: Colors.white,
+                                  fontSize: 17),
                             ),
                           )
                         ],
@@ -253,10 +243,10 @@ Open till 7 Pm''',
 }
 
 class IconTile extends StatelessWidget {
-  final String? imgAssetPath;
-  final Color? backColor;
+  String imgAssetPath;
+  Color backColor;
 
-  IconTile({this.imgAssetPath, this.backColor});
+  IconTile({required this.imgAssetPath, required this.backColor});
 
   @override
   Widget build(BuildContext context) {
@@ -268,7 +258,7 @@ class IconTile extends StatelessWidget {
         decoration: BoxDecoration(
             color: backColor, borderRadius: BorderRadius.circular(15)),
         child: Image.asset(
-          imgAssetPath!,
+          imgAssetPath,
           width: 20,
         ),
       ),

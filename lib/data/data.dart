@@ -1,36 +1,74 @@
-import 'package:doctify/model/speciality.dart';
+// import 'package:doctify/model/Specialty.dart';
+// import 'package:flutter/cupertino.dart';
+
+
+
+// List<SpecialtyModel> getSpecialty() {
+//   List<SpecialtyModel> Specialties = []; // Use list literal syntax []
+
+//   SpecialtyModel SpecialtyModel = SpecialtyModel();
+
+//   //1
+//   SpecialtyModel.noOfDoctors = 10;
+//   SpecialtyModel.Specialty = "Cough & Cold";
+//   SpecialtyModel.imgAssetPath = "assets/img1.png";
+//   SpecialtyModel.backgroundColor = Color(0xffFBB97C);
+//   Specialties.add(SpecialtyModel);
+
+//   SpecialtyModel = SpecialtyModel(Specialty: '');
+
+//   //2
+//   SpecialtyModel.noOfDoctors = 17;
+//   SpecialtyModel.Specialty = "Heart Specialist";
+//   SpecialtyModel.imgAssetPath = "assets/img2.png";
+//   SpecialtyModel.backgroundColor = Color(0xffF69383);
+//   Specialties.add(SpecialtyModel);
+
+//   SpecialtyModel = SpecialtyModel();
+
+//   //3
+//   SpecialtyModel.noOfDoctors = 27;
+//   SpecialtyModel.Specialty = "Diabetes Care";
+//   SpecialtyModel.imgAssetPath = "assets/img3.png";
+//   SpecialtyModel.backgroundColor = Color(0xffEACBCB);
+//   Specialties.add(SpecialtyModel);
+
+//   return Specialties;
+// }
+
+
+import 'package:doctify/model/Specialty.dart';
 import 'package:flutter/cupertino.dart';
 
-List<SpecialityModel> getSpeciality() {
-  List<SpecialityModel> specialities = [];
-  SpecialityModel specialityModel = new SpecialityModel();
+List<SpecialtyModel> getSpecialty() {
+  List<SpecialtyModel> specialties = []; // Use list literal syntax []
+
+  SpecialtyModel specialtyModel = SpecialtyModel();
 
   //1
-  specialityModel.noOfDoctors = 10;
-  specialityModel.speciality = "Cough & Cold";
-  specialityModel.imgAssetPath = "assets/img1.png";
-  specialityModel.backgroundColor = Color(0xffFBB97C);
-  specialities.add(specialityModel);
+  specialtyModel.noOfDoctors = 10;
+  specialtyModel.Specialty = "Cough & Cold"; // Note the correct spelling
+  specialtyModel.imgAssetPath = "assets/img1.png";
+  specialtyModel.backgroundColor = Color(0xffFBB97C);
+  specialties.add(specialtyModel);
 
-  specialityModel = new SpecialityModel();
+  specialtyModel = SpecialtyModel(specialty: ''); // Note the correct spelling
 
   //2
-  specialityModel.noOfDoctors = 17;
-  specialityModel.speciality = "Heart Specialist";
-  specialityModel.imgAssetPath = "assets/img2.png";
-  specialityModel.backgroundColor = Color(0xffF69383);
-  specialities.add(specialityModel);
+  specialtyModel.noOfDoctors = 17;
+  specialtyModel.specialty = "Heart Specialist"; // Note the correct spelling
+  specialtyModel.imgAssetPath = "assets/img2.png";
+  specialtyModel.backgroundColor = Color(0xffF69383);
+  specialties.add(specialtyModel);
 
-  specialityModel = new SpecialityModel();
+  specialtyModel = SpecialtyModel();
 
   //3
-  specialityModel.noOfDoctors = 27;
-  specialityModel.speciality = "Diabetes Care";
-  specialityModel.imgAssetPath = "assets/img3.png";
-  specialityModel.backgroundColor = Color(0xffEACBCB);
-  specialities.add(specialityModel);
+  specialtyModel.noOfDoctors = 27;
+  specialtyModel.specialty = "Diabetes Care"; // Note the correct spelling
+  specialtyModel.imgAssetPath = "assets/img3.png";
+  specialtyModel.backgroundColor = Color(0xffEACBCB);
+  specialties.add(specialtyModel);
 
-  specialityModel = new SpecialityModel();
-
-  return specialities;
+  return specialties;
 }

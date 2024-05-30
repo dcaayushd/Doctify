@@ -1,26 +1,26 @@
 import 'package:doctify/data/data.dart';
-import 'package:doctify/model/speciality.dart';
+import 'package:doctify/model/Specialty.dart';
 import 'package:doctify/views/doctor_info.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-String? selectedCategorie = "Adults";
+String selectedCategorie = "Adults";
 
 class HomePage extends StatefulWidget {
   @override
-  HomePageState createState() => HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   List<String> categories = ["Adults", "Childrens", "Womens", "Mens"];
 
-  late List<SpecialityModel> specialities;
+  late List<SpecialtyModel> Specialties;
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
 
-    specialities = getSpeciality();
+    Specialties = getSpecialty();
   }
 
   @override
@@ -29,10 +29,7 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          systemNavigationBarColor: Colors.blue, // Navigation bar
-          statusBarColor: Colors.red, // Status bar
-        ),
+        // brightness: Brightness.light,
         iconTheme: IconThemeData(color: Colors.black87),
       ),
       drawer: Drawer(child: Container() // Populate the Drawer in the next step.
@@ -110,16 +107,16 @@ class HomePageState extends State<HomePage> {
               Container(
                 height: 250,
                 child: ListView.builder(
-                    itemCount: specialities.length,
+                    itemCount: Specialties.length,
                     shrinkWrap: true,
                     physics: ClampingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return SpecialistTile(
-                        imgAssetPath: specialities[index].imgAssetPath,
-                        speciality: specialities[index].speciality,
-                        noOfDoctors: specialities[index].noOfDoctors,
-                        backColor: specialities[index].backgroundColor,
+                        imgAssetPath: Specialties[index].imgAssetPath,
+                        Specialty: Specialties[index].Specialty,
+                        noOfDoctors: Specialties[index].noOfDoctors,
+                        backColor: Specialties[index].backgroundColor,
                       );
                     }),
               ),
@@ -146,10 +143,13 @@ class HomePageState extends State<HomePage> {
 }
 
 class CategorieTile extends StatefulWidget {
-  final String? categorie;
-  final bool? isSelected;
-  final HomePageState? context;
-  CategorieTile({this.categorie, this.isSelected, this.context});
+  final String categorie;
+  final bool isSelected;
+  _HomePageState context;
+  CategorieTile(
+      {required this.categorie,
+      required this.isSelected,
+      required this.context});
 
   @override
   _CategorieTileState createState() => _CategorieTileState();
@@ -160,7 +160,7 @@ class _CategorieTileState extends State<CategorieTile> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.context!.setState(() {
+        widget.context.setState(() {
           selectedCategorie = widget.categorie;
         });
       },
@@ -170,13 +170,12 @@ class _CategorieTileState extends State<CategorieTile> {
         margin: EdgeInsets.only(left: 8),
         height: 30,
         decoration: BoxDecoration(
-            color: widget.isSelected! ? Color(0xffFFD0AA) : Colors.white,
+            color: widget.isSelected ? Color(0xffFFD0AA) : Colors.white,
             borderRadius: BorderRadius.circular(30)),
         child: Text(
-          widget.categorie!,
+          widget.categorie,
           style: TextStyle(
-              color:
-                  widget.isSelected! ? Color(0xffFC9535) : Color(0xffA1A1A1)),
+              color: widget.isSelected ? Color(0xffFC9535) : Color(0xffA1A1A1)),
         ),
       ),
     );
@@ -184,13 +183,13 @@ class _CategorieTileState extends State<CategorieTile> {
 }
 
 class SpecialistTile extends StatelessWidget {
-  final String? imgAssetPath;
-  final String? speciality;
-  final int? noOfDoctors;
-  final Color? backColor;
+  final String imgAssetPath;
+  final String Specialty;
+  final int noOfDoctors;
+  final Color backColor;
   SpecialistTile(
       {required this.imgAssetPath,
-      required this.speciality,
+      required this.Specialty,
       required this.noOfDoctors,
       required this.backColor});
 
@@ -206,7 +205,7 @@ class SpecialistTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            speciality!,
+            Specialty,
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           SizedBox(
@@ -216,11 +215,11 @@ class SpecialistTile extends StatelessWidget {
             "$noOfDoctors Doctors",
             style: TextStyle(color: Colors.white, fontSize: 13),
           ),
-          Expanded(
-              child: Image.asset(
-            imgAssetPath!,
-            fit: BoxFit.contain,
-          ))
+          Image.asset(
+            imgAssetPath,
+            height: 160,
+            fit: BoxFit.fitHeight,
+          )
         ],
       ),
     );
@@ -252,7 +251,7 @@ class DoctorsTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Dr. Aayusha Karki",
+                  "Dr. Stefeni Albert",
                   style: TextStyle(color: Color(0xffFC9535), fontSize: 19),
                 ),
                 SizedBox(

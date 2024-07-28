@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 String selectedCategorie = "Adults";
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -17,10 +19,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
-    Specialties = getSpecialty();
+    // final Specialties = getSpecialty();
+   final specialties = getSpecialty();
+  
   }
 
   @override
@@ -30,18 +32,18 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         // brightness: Brightness.light,
-        iconTheme: IconThemeData(color: Colors.black87),
+        iconTheme: const IconThemeData(color: Colors.black87),
       ),
       drawer: Drawer(child: Container() // Populate the Drawer in the next step.
           ),
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -51,16 +53,16 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 30,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 24),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 height: 50,
                 decoration: BoxDecoration(
-                    color: Color(0xffEFEFEF),
+                    color: const Color(0xffEFEFEF),
                     borderRadius: BorderRadius.circular(14)),
-                child: Row(
+                child: const Row(
                   children: <Widget>[
                     Icon(Icons.search),
                     SizedBox(
@@ -73,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Text(
@@ -83,15 +85,15 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 25,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 30,
                 child: ListView.builder(
                     itemCount: categories.length,
                     shrinkWrap: true,
-                    physics: ClampingScrollPhysics(),
+                    physics: const ClampingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return CategorieTile(
@@ -101,26 +103,26 @@ class _HomePageState extends State<HomePage> {
                       );
                     }),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 250,
                 child: ListView.builder(
                     itemCount: Specialties.length,
                     shrinkWrap: true,
-                    physics: ClampingScrollPhysics(),
+                    physics: const ClampingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return SpecialistTile(
-                        imgAssetPath: Specialties[index].imgAssetPath,
-                        Specialty: Specialties[index].Specialty,
-                        noOfDoctors: Specialties[index].noOfDoctors,
-                        backColor: Specialties[index].backgroundColor,
+                        imgAssetPath: Specialties[index].imgAssetPath.toString(),
+                        Specialty: Specialties[index].Specialty.toString(),
+                        noOfDoctors: Specialties[index].noOfDoctors!,
+                        backColor: Specialties[index].backgroundColor!,
                       );
                     }),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
@@ -130,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 25,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               DoctorsTile()
@@ -145,11 +147,11 @@ class _HomePageState extends State<HomePage> {
 class CategorieTile extends StatefulWidget {
   final String categorie;
   final bool isSelected;
-  _HomePageState context;
-  CategorieTile(
-      {required this.categorie,
+ final _HomePageState context;
+  const CategorieTile(
+      {Key? key, required this.categorie,
       required this.isSelected,
-      required this.context});
+      required this.context}) : super(key: key);
 
   @override
   _CategorieTileState createState() => _CategorieTileState();
@@ -166,16 +168,16 @@ class _CategorieTileState extends State<CategorieTile> {
       },
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        margin: EdgeInsets.only(left: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.only(left: 8),
         height: 30,
         decoration: BoxDecoration(
-            color: widget.isSelected ? Color(0xffFFD0AA) : Colors.white,
+            color: widget.isSelected ? const Color(0xffFFD0AA) : Colors.white,
             borderRadius: BorderRadius.circular(30)),
         child: Text(
           widget.categorie,
           style: TextStyle(
-              color: widget.isSelected ? Color(0xffFC9535) : Color(0xffA1A1A1)),
+              color: widget.isSelected ? const Color(0xffFC9535) : const Color(0xffA1A1A1)),
         ),
       ),
     );
@@ -187,33 +189,33 @@ class SpecialistTile extends StatelessWidget {
   final String Specialty;
   final int noOfDoctors;
   final Color backColor;
-  SpecialistTile(
-      {required this.imgAssetPath,
+  const SpecialistTile(
+      {Key? key, required this.imgAssetPath,
       required this.Specialty,
       required this.noOfDoctors,
-      required this.backColor});
+      required this.backColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       decoration: BoxDecoration(
           color: backColor, borderRadius: BorderRadius.circular(24)),
-      padding: EdgeInsets.only(top: 16, right: 16, left: 16),
+      padding: const EdgeInsets.only(top: 16, right: 16, left: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
             Specialty,
-            style: TextStyle(color: Colors.white, fontSize: 20),
+            style: const TextStyle(color: Colors.white, fontSize: 20),
           ),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           Text(
             "$noOfDoctors Doctors",
-            style: TextStyle(color: Colors.white, fontSize: 13),
+            style: const TextStyle(color: Colors.white, fontSize: 13),
           ),
           Image.asset(
             imgAssetPath,
@@ -227,6 +229,8 @@ class SpecialistTile extends StatelessWidget {
 }
 
 class DoctorsTile extends StatelessWidget {
+  const DoctorsTile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -236,18 +240,18 @@ class DoctorsTile extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-            color: Color(0xffFFEEE0), borderRadius: BorderRadius.circular(20)),
-        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+            color: const Color(0xffFFEEE0), borderRadius: BorderRadius.circular(20)),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
         child: Row(
           children: <Widget>[
             Image.asset(
               "assets/doctor_pic.png",
               height: 50,
             ),
-            SizedBox(
+            const SizedBox(
               width: 17,
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
@@ -263,13 +267,13 @@ class DoctorsTile extends StatelessWidget {
                 )
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 9),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 9),
               decoration: BoxDecoration(
-                  color: Color(0xffFBB97C),
+                  color: const Color(0xffFBB97C),
                   borderRadius: BorderRadius.circular(13)),
-              child: Text(
+              child: const Text(
                 "Call",
                 style: TextStyle(
                     color: Colors.white,

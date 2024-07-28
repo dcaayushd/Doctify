@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DoctorsInfo extends StatefulWidget {
+  const DoctorsInfo({Key? key}) : super(key: key);
+
   @override
   _DoctorsInfoState createState() => _DoctorsInfoState();
 }
@@ -13,52 +15,52 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
         // brightness: Brightness.light,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black87
         ),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
                 children: <Widget>[
                   Image.asset("assets/doctor_pic2.png", height: 220),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  Container(
+                  SizedBox(
                     width: MediaQuery.of(context).size.width - 222,
                     height: 220,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text(
+                        const Text(
                           "Dr. Stefeni Albert",
                           style: TextStyle(fontSize: 32),
                         ),
-                        Text(
+                        const Text(
                           "Heart Speailist",
                           style: TextStyle(fontSize: 19, color: Colors.grey),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         Row(
                           children: <Widget>[
                             IconTile(
-                              backColor: Color(0xffFFECDD),
+                              backColor: const Color(0xffFFECDD),
                               imgAssetPath: "assets/email.png",
                             ),
                             IconTile(
-                              backColor: Color(0xffFEF2F0),
+                              backColor: const Color(0xffFEF2F0),
                               imgAssetPath: "assets/call.png",
                             ),
                             IconTile(
-                              backColor: Color(0xffEBECEF),
+                              backColor: const Color(0xffEBECEF),
                               imgAssetPath: "assets/video_call.png",
                             ),
                           ],
@@ -68,21 +70,21 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 26,
               ),
-              Text(
+              const Text(
                 "About",
                 style: TextStyle(fontSize: 22),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
-              Text(
+              const Text(
                 "Dr. Stefeni Albert is a cardiologist in Nashville & affiliated with multiple hospitals in the  area.He received his medical degree from Duke University School of Medicine and has been in practice for more than 20 years. ",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 24,
               ),
               Row(
@@ -92,7 +94,7 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                       Row(
                         children: <Widget>[
                           Image.asset("assets/mappin.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Column(
@@ -104,12 +106,12 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                                     color: Colors.black87.withOpacity(0.7),
                                     fontSize: 20),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 3,
                               ),
-                              Container(
+                              SizedBox(
                                   width: MediaQuery.of(context).size.width - 268,
-                                  child: Text(
+                                  child: const Text(
                                     "House # 2, Road # 5, Green Road Dhanmondi, Dhaka, Bangladesh",
                                     style: TextStyle(color: Colors.grey),
                                   ))
@@ -117,13 +119,13 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
                         children: <Widget>[
                           Image.asset("assets/clock.png"),
-                          SizedBox(
+                          const SizedBox(
                             width: 20,
                           ),
                           Column(
@@ -135,12 +137,12 @@ class _DoctorsInfoState extends State<DoctorsInfo> {
                                     color: Colors.black87.withOpacity(0.7),
                                     fontSize: 20),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 3,
                               ),
-                              Container(
+                              SizedBox(
                                   width: MediaQuery.of(context).size.width - 268,
-                                  child: Text(
+                                  child: const Text(
                                     '''Monday - Friday
 Open till 7 Pm''',
                                     style: TextStyle(color: Colors.grey),
@@ -157,40 +159,40 @@ Open till 7 Pm''',
                   )
                 ],
               ),
-              Text(
+              const Text(
                 "Activity",
                 style: TextStyle(
                     color: Color(0xff242424),
                     fontSize: 28,
                     fontWeight: FontWeight.w600),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 22,
               ),
               Row(
                 children: <Widget>[
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 16),
                       decoration: BoxDecoration(
-                          color: Color(0xffFBB97C),
+                          color: const Color(0xffFBB97C),
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: Color(0xffFCCA9B),
+                              color: const Color(0xffFCCA9B),
                               borderRadius: BorderRadius.circular(16)
                             ),
                               child: Image.asset("assets/list.png")),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width/2 - 130,
-                            child: Text(
+                            child: const Text(
                               "List Of Schedule",
                               style: TextStyle(color: Colors.white,
                               fontSize: 17),
@@ -200,29 +202,29 @@ Open till 7 Pm''',
                       ),
                     ),
                   ),
-                  SizedBox(width: 16,),
+                  const SizedBox(width: 16,),
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 24,horizontal: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 16),
                       decoration: BoxDecoration(
-                          color: Color(0xffA5A5A5),
+                          color: const Color(0xffA5A5A5),
                           borderRadius: BorderRadius.circular(20)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Container(
-                              padding: EdgeInsets.all(8),
+                              padding: const EdgeInsets.all(8),
                               decoration: BoxDecoration(
-                                  color: Color(0xffBBBBBB),
+                                  color: const Color(0xffBBBBBB),
                                   borderRadius: BorderRadius.circular(16)
                               ),
                               child: Image.asset("assets/list.png")),
-                          SizedBox(
+                          const SizedBox(
                             width: 16,
                           ),
-                          Container(
+                          SizedBox(
                             width: MediaQuery.of(context).size.width/2 - 130,
-                            child: Text(
+                            child: const Text(
                               "Doctor's Daily Post",
                               style: TextStyle(color: Colors.white,
                                   fontSize: 17),
@@ -246,12 +248,12 @@ class IconTile extends StatelessWidget {
   String imgAssetPath;
   Color backColor;
 
-  IconTile({required this.imgAssetPath, required this.backColor});
+  IconTile({Key? key, required this.imgAssetPath, required this.backColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       child: Container(
         height: 45,
         width: 45,
